@@ -1,41 +1,101 @@
 ---
 sidebar_position: 1
-title: UClaw 文档中心
-description: UClaw 用户手册、开发者便携版制作手册和项目资料入口。
+title: UClaw 简介
+description: UClaw 是一款跨平台桌面应用，为 OpenClaw AI 智能体提供可视化界面。支持 macOS、Windows 和 Linux。
 ---
 
-# UClaw 文档中心
+# UClaw：OpenClaw AI 智能体的桌面界面
 
-这里是 UClaw 文档站，面向普通用户和开发者整理安装、使用、便携版制作和发布维护资料。
+> UClaw 是一款跨平台桌面应用，为 OpenClaw AI 智能体提供可视化界面——无需命令行。支持 macOS、Windows 和 Linux。
 
-UClaw 是 OpenClaw AI Agent 的跨平台桌面客户端。它将 OpenClaw 的命令行智能体编排能力封装为图形化体验，让用户可以通过桌面应用完成模型服务配置、智能体对话、多渠道接入、定时任务、技能管理和诊断维护。
+UClaw 是一款桌面应用程序，为 OpenClaw AI 智能体提供简洁直观的可视化界面。你无需操作配置文件或命令行工具，即可通过应用程序管理对话、安排自动化任务、连接消息渠道并配置 AI 提供商。UClaw 直接内嵌 OpenClaw 运行时，首次聊天前无需额外安装或配置任何内容。
 
-## 文档入口
+## 你可以用 UClaw 做什么
 
-- [用户使用手册](./user-manual)：面向普通用户，覆盖安装、首次启动、聊天、模型、联网搜索、渠道、定时任务、技能和移动盘使用。
-- [开发者便携版制作手册](./developer-portable-manual)：面向开发者，覆盖便携版目标、打包命令、启动器要求、隔离验证和发布检查。
-- [UClaw 产品页](/uclaw)：了解 UClaw 的产品能力、架构和使用场景。
+### 与 AI 智能体对话
 
-## 当前资料来源
+**聊天**页面让你可以向 AI 智能体发送消息，并接收支持完整 Markdown 渲染的回复。你可以在消息输入框中输入 `@智能体名称` 来直接指定某个智能体，这会将你切换到该智能体自己的对话上下文。每个智能体都维护各自的对话历史，你可以随时开启新对话。
 
-本次文档依据 `/Users/zsh/Documents/UClaw` 中的资料整理：
+### 连接消息渠道
 
-- `docs/user-guide.md`
-- `docs/requirements.md`
-- `docs/changelog.md`
-- `docs/README.md`
-- `resources/screenshot/zh/*.png`
+**渠道**页面让你可以将外部消息平台与 AI 智能体关联，使传入的消息自动由指定智能体处理。UClaw 支持：
 
-当前本地 UClaw 目录不是完整源码检出，只包含文档和截图。开发者打包命令需要在完整源码仓库中执行。
+* 微信（个人版，通过二维码）
+* WhatsApp（通过二维码）
+* Telegram（机器人令牌）
+* Discord（机器人令牌）
+* 飞书 / Lark（应用凭据）
+* 钉钉（应用凭据）
+* 企业微信（应用凭据）
+* QQ 机器人（应用凭据）
 
-## 适用版本
+每个渠道支持多个账号，且每个账号可以绑定到不同的智能体。
 
-- UClaw：v0.2.11 及相近版本
-- OpenClaw：2026.4.15 基线
-- 桌面系统：Windows、macOS、Linux
+### 按计划自动执行任务
 
-## 维护建议
+**定时任务**页面让你可以创建定时自动运行的 AI 任务。你只需定义提示词、选择智能体、设置时间间隔，并可选配置外部推送目标，让结果直接发送到指定渠道或联系人。
 
-- 用户可见功能变化后，优先更新用户使用手册。
-- 打包、启动器、数据目录或发布流程变化后，优先更新开发者便携版制作手册。
-- 新截图应放入 `static/img/uclaw/zh/` 并在文档中使用 `/img/uclaw/zh/<file>.png` 引用。
+### 通过技能扩展智能体能力
+
+**技能**页面展示所有已安装的技能。UClaw 预置了用于处理 PDF、XLSX、DOCX 和 PPTX 文件的文档处理技能，以及网络搜索技能和自我优化智能体技能。技能在全新安装时默认启用，你可以在技能页面随时开启或关闭，并直接打开其所在目录。
+
+### 安全管理 AI 提供商
+
+**模型**页面是配置 AI 提供商凭据的地方。UClaw 将 API 密钥存储在你操作系统的原生密钥链中，而非明文配置文件。你可以连接 OpenAI、Anthropic 或任何 OpenAI 兼容端点。
+
+## 系统要求
+
+| 要求     | 最低配置         | 推荐配置 |
+| -------- | ---------------- | -------- |
+| 内存     | 4 GB RAM         | 8 GB RAM |
+| 磁盘空间 | 1 GB 可用空间    | —        |
+| macOS    | 11 (Big Sur)     | 最新版本 |
+| Windows  | 10               | 最新版本 |
+| Linux    | Ubuntu 20.04     | 最新 LTS |
+
+## 文档导航
+
+### 入门指南
+
+| 文档 | 说明 |
+|------|------|
+| [安装 UClaw](./installation.md) | 在 macOS、Windows 或 Linux 上下载并安装 |
+| [设置向导](./setup-wizard.md) | 首次启动时完成五步引导配置 |
+
+### 核心功能
+
+| 文档 | 说明 |
+|------|------|
+| [聊天](./features/chat.md) | 开始对话、@ 指定智能体、使用网络搜索、管理会话 |
+| [渠道](./features/channels.md) | 连接微信、Telegram、Discord、飞书、钉钉等消息平台 |
+| [定时任务](./features/cron.md) | 创建定时 AI 任务，自动运行并推送结果 |
+| [模型](./features/models.md) | 配置 AI 提供商、刷新模型列表、查看 Token 用量 |
+| [技能](./features/skills.md) | 启用文档处理、网络搜索等内置技能 |
+
+### 配置
+
+| 文档 | 说明 |
+|------|------|
+| [AI 提供商](./configuration/ai-providers.md) | 配置 OpenAI、Anthropic 或自定义兼容提供商 |
+| [代理服务器](./configuration/proxy.md) | 为网关和渠道配置代理，适用于受限网络 |
+| [设置](./configuration/settings.md) | 外观、语言、启动、网关端口和更新控制 |
+
+### 高级功能
+
+| 文档 | 说明 |
+|------|------|
+| [开发者模式](./advanced/developer-mode.md) | Doctor 诊断、高级代理覆盖、启动超时变量 |
+| [便携 USB 模式](./advanced/portable-usb.md) | 在 USB 驱动器上配置双分区便携布局 |
+
+### 参考
+
+| 文档 | 说明 |
+|------|------|
+| [常见问题](./faq.md) | 安装、提供商、渠道、技能和定时任务的常见问题 |
+| [故障排除](./troubleshooting.md) | 修复网关、模型、渠道和启动问题 |
+
+## 外部链接
+
+- [GitHub 仓库](https://github.com/DepartureZSH/UClaw)
+- [发布版本下载](https://github.com/DepartureZSH/UClaw/releases)
+- [UClaw 产品页](/uclaw)

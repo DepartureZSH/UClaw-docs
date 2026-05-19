@@ -80,38 +80,58 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '入门',
           items: [
             {
-              label: '文档中心',
+              label: 'UClaw 简介',
               to: '/docs/intro',
             },
             {
-              label: '用户使用手册',
-              to: '/docs/user-manual',
+              label: '安装指南',
+              to: '/docs/installation',
             },
             {
-              label: '开发者便携版制作手册',
-              to: '/docs/developer-portable-manual',
+              label: '设置向导',
+              to: '/docs/setup-wizard',
             },
           ],
         },
         {
-          title: 'Project',
+          title: '核心功能',
           items: [
+            {
+              label: '聊天',
+              to: '/docs/features/chat',
+            },
+            {
+              label: '渠道',
+              to: '/docs/features/channels',
+            },
+            {
+              label: '定时任务',
+              to: '/docs/features/cron',
+            },
+            {
+              label: '模型',
+              to: '/docs/features/models',
+            },
+          ],
+        },
+        {
+          title: '参考',
+          items: [
+            {
+              label: '常见问题',
+              to: '/docs/faq',
+            },
+            {
+              label: '故障排除',
+              to: '/docs/troubleshooting',
+            },
             {
               label: 'UClaw 产品页',
               to: '/uclaw',
             },
-            {
-              label: 'GitHub Releases',
-              href: 'https://github.com/DepartureZSH/UClaw/releases',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
             {
               label: 'GitHub',
               href: 'https://github.com/DepartureZSH/UClaw',

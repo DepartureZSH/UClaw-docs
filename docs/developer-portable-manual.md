@@ -1,13 +1,13 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 title: 开发者便携版制作手册
 description: 面向开发者的 UClaw 便携版构建、校验、打包和发布检查指南。
 ---
 
 # UClaw 开发者便携版制作手册
 
-资料来源：`/Users/zsh/Documents/UClaw/docs/requirements.md`、`/Users/zsh/Documents/UClaw/docs/changelog.md`、`/Users/zsh/Documents/UClaw/docs/user-guide.md`  
-当前基线：UClaw v0.2.11、OpenClaw 2026.4.15
+资料来源：[UClaw GitHub 仓库](https://github.com/DepartureZSH/UClaw)  
+便携版运行原理：[便携 USB 模式](./advanced/portable-usb.md)
 
 这份手册面向负责构建和发布 UClaw 的开发者，重点说明如何制作可放入移动盘使用的便携版，并如何验证便携版不会污染或错误继承用户本机旧数据。
 
